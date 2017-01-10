@@ -35,7 +35,6 @@ namespace HomeControl.Models.Modules
         private void Simulate()
         {
             int currentTemperature;
-            int updatedTemperature;
 
             while (true)
             {
