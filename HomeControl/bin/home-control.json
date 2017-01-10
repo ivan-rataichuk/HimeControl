@@ -1,0 +1,67 @@
+{
+  "PowerMeter": null,
+  "Devices": {
+    "Devices": [
+      {
+        "$type": "HomeControl.Models.Devices.Heater, HomeControlModel",
+        "temperatureRegulator": {
+          "$type": "HomeControl.Models.Modules.Regulator, HomeControlModel",
+          "maxValue": 40,
+          "minValue": 20
+        },
+        "powerConsumption": 240,
+        "CurrentTemperature": 40,
+        "Id": 0,
+        "Type": "Heater"
+      },
+      {
+        "$type": "HomeControl.Models.Devices.Tv, HomeControlModel",
+        "tuner": {
+          "$type": "HomeControl.Models.Modules.Tuner, HomeControlModel",
+          "type": "Tv"
+        },
+        "speakers": {
+          "$type": "HomeControl.Models.Modules.Regulator, HomeControlModel",
+          "maxValue": 80,
+          "minValue": 0
+        },
+        "powerConsumption": 120,
+        "SoundSignal": "channel 1 signal",
+        "VideoSignal": "channel 1 signal",
+        "Volume": 80,
+        "Id": 1,
+        "Type": "Tv"
+      },
+      {
+        "$type": "HomeControl.Models.Devices.Heater, HomeControlModel",
+        "temperatureRegulator": {
+          "$type": "HomeControl.Models.Modules.Regulator, HomeControlModel",
+          "maxValue": 40,
+          "minValue": 20
+        },
+        "powerConsumption": 240,
+        "CurrentTemperature": 0,
+        "Id": 2,
+        "Type": "Heater"
+      },
+      {
+        "$type": "HomeControl.Models.Devices.Tv, HomeControlModel",
+        "tuner": {
+          "$type": "HomeControl.Models.Modules.Tuner, HomeControlModel",
+          "type": "Tv"
+        },
+        "speakers": {
+          "$type": "HomeControl.Models.Modules.Regulator, HomeControlModel",
+          "maxValue": 80,
+          "minValue": 0
+        },
+        "powerConsumption": 120,
+        "SoundSignal": null,
+        "VideoSignal": null,
+        "Volume": 0,
+        "Id": 3,
+        "Type": "Tv"
+      }
+    ]
+  }
+}

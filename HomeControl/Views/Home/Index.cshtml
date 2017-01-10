@@ -1,0 +1,41 @@
+﻿@model HomeControl.Models.HomeModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Home Control</h1>
+    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+       <h2>Add Device</h2>
+        @using (Html.BeginForm("AddDevice", "Home", FormMethod.Post))
+        {
+            <select name="type">
+                @foreach (string type in Model.GetDevicesTypes())
+                {
+                    <option >@type</option>
+                }
+            </select>
+            <input type="submit" value="Add Device">
+        }
+        <hr>
+        <p><a href="/Home/SaveChanges">SaveChanges</a></p>
+        
+    </div>
+
+    <div class="col-md-4">
+        <h2>Devices</h2>
+        @foreach (HomeControl.Models.BaseClasses.BaseDevice device in Model.Devices.GetAll())
+        {
+            @_DeviceHelpers.ShowDevice(device);
+        }
+    </div>
+
+    <div class="col-md-4">
+        
+    </div>
+</div>

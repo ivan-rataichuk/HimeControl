@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<channels>
+  <channel type="Tv">
+    <name>Channel 1</name>
+    <signal>channel 1 signal</signal>
+  </channel>
+
+  <channel type="Tv">
+    <name>Channel 2</name>
+    <signal>channel 2 signal</signal>
+  </channel>
+
+  <channel type="Radio">
+    <name>Channel 3</name>
+    <signal>channel 3 signal</signal>
+  </channel>
+
+  <channel type="Radio">
+    <name>Channel 4</name>
+    <signal>channel 4 signal</signal>
+  </channel>
+</channels>

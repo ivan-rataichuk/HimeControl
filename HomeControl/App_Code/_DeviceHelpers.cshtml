@@ -1,0 +1,100 @@
+﻿@helper ShowDevice(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+    <ul>
+        <li>Device Id: @device.Id</li>
+        <li>Type: @device.Type</li>
+        <li>Power Consumption: @device.powerConsumption</li>
+    </ul>
+    <p>@SwitchDevice(device)</p>
+
+    switch (device.Type)
+        {
+            case "Tv":
+                @ShowTv(device);
+                break;
+            case "Radio":
+                @ShowRadio(device);
+                break;
+            case "Heater":
+                @ShowHeater(device);
+                break;
+            case "Refrigirator":
+                @ShowRefrigirator(device);
+                break;
+        }
+    <p><a href="/Home/Delete/@device.Id">Delete</a></p>
+    <hr>
+}
+
+@helper ShowTv(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+        HomeControl.Models.Devices.Tv tv = (HomeControl.Models.Devices.Tv)device;
+        <p>Video : @tv.VideoSignal</p>
+        <p>Sound : @tv.SoundSignal</p>
+        <p>Volume: @tv.Volume</p>
+        <p>@SelectChannel(tv.Channels, tv.Id)</p>
+        <p>@SetVolume(tv.Id)</p>
+}
+
+@helper ShowRadio(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+        HomeControl.Models.Devices.Radio radio = (HomeControl.Models.Devices.Radio)device;
+        <p>Sound : @radio.SoundSignal</p>
+        <p>Volume: @radio.Volume</p>
+        <p>@SelectChannel(radio.Channels, radio.Id)</p>
+        <p>@SetVolume(radio.Id)</p>
+}
+
+@helper ShowHeater(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+        HomeControl.Models.Devices.Heater heater = (HomeControl.Models.Devices.Heater)device;
+        <p>Current Temperature : @heater.CurrentTemperature</p>
+        <p>@SetTempearture(heater.Id)</p>
+}
+
+@helper ShowRefrigirator(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+        HomeControl.Models.Devices.Refrigirator refrigirator = (HomeControl.Models.Devices.Refrigirator)device;
+        <p>Current Temperature : @refrigirator.CurrentTemperature</p>
+        <p>@SetTempearture(refrigirator.Id)</p>
+}
+
+@helper SelectChannel(IEnumerable<string> channels, int id)
+{
+   <form action="Home/SelectChannel">
+       <select name="channel" onchange="this.form.submit()">
+           <option disabled selected>Select a channel</option>
+           @foreach (string channel in channels)
+           {
+               <option>@channel</option>
+           }
+       </select>
+       <input type="hidden" name="id" value="@id"/>
+   </form>
+}
+
+@helper SetVolume(int id)
+{
+    <form action="Home/SetVolume">
+        <input name="volume" type="text" placeholder="Volume">
+        <input type="hidden" name="id" value="@id" />
+        <input type="submit" value="Set Volume" />
+    </form>
+}
+
+@helper SetTempearture(int id)
+{
+    <form action="Home/SetTemperature">
+        <input name="temperature" type="text" placeholder="Temperature">
+        <input type="hidden" name="id" value="@id" />
+        <input type="submit" value="Set Temperature" />
+    </form>
+}
+
+@helper SwitchDevice(HomeControl.Models.BaseClasses.BaseDevice device)
+{
+    <form action="Home/SwitchDevice">
+        @Html.CheckBox("isSwitched", @device.IsOn, new { @onchange = "this.form.submit()" })
+        <input type="hidden" name="id" value="@device.Id" />
+    </form>
+}

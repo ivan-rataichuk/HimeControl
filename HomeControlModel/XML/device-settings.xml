@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<device-settings>
+  <device type="Heater">
+    <power-consumption>240</power-consumption>
+
+      <max-value>40</max-value>
+      <min-value>20</min-value>
+
+  </device>
+
+  <device type="Refrigirator">
+    <power-consumption>180</power-consumption>
+
+      <max-value>5</max-value>
+      <min-value>-5</min-value>
+
+  </device>
+
+  <device type="Tv">
+    <power-consumption>120</power-consumption>
+
+      <max-value>80</max-value>
+      <min-value>0</min-value>
+
+  </device>
+
+  <device type="Radio">
+    <power-consumption>60</power-consumption>
+
+      <max-value>50</max-value>
+      <min-value>0</min-value>
+
+  </device>
+  
+</device-settings>
