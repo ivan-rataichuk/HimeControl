@@ -8,3 +8,13 @@ C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\Test\obj\Debug\T
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\Test\obj\Debug\Test.pdb
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\Test\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\Test.exe.config
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\obj\Debug\Test.exe
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\obj\Debug\Test.pdb
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\Test.exe
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\Test.pdb
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\HomeControlModel.dll
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\HomeControlModel.pdb
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\HimeControl\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

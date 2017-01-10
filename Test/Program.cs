@@ -47,8 +47,6 @@ namespace Test
             tv.SetVolume(90);
             Console.WriteLine(tv.Volume);
 
-            Console.WriteLine(tv.powerConsumption);
-
             //hm.SaveInstance();
             Console.WriteLine(hm == null ? "null" : "notNull");
 

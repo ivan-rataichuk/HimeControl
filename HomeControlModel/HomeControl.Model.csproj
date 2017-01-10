@@ -59,10 +59,11 @@
     <Compile Include="Intefaces\Devices\ISoundable.cs" />
     <Compile Include="Intefaces\Devices\IThermalControllable.cs" />
     <Compile Include="Intefaces\Modules\IRegulator.cs" />
-    <Compile Include="Intefaces\Modules\IScreen.cs" />
     <Compile Include="Intefaces\Modules\ISelector.cs" />
+    <Compile Include="Intefaces\Modules\ITimer.cs" />
     <Compile Include="Modules\Channel.cs" />
     <Compile Include="Modules\Regulator.cs" />
+    <Compile Include="Modules\TemperatureRegulator.cs" />
     <Compile Include="Modules\Tuner.cs" />
     <Compile Include="Notification\EmailSender.cs" />
     <Compile Include="Persistence\PersistenceUnit.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Utility\PowerMeter.cs" />
     <Compile Include="Utility\SecuritySystem.cs" />
+    <Compile Include="Utility\Scheduler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="XML\channels.xml" />

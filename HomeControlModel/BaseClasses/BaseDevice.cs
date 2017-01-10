@@ -20,7 +20,7 @@ namespace HomeControl.Models.BaseClasses
         public event UpdatePowerConsumption ConsumptionChanged;
 
         [DataMember]
-        public readonly int powerConsumption; // opened to test
+        private readonly int powerConsumption; // opened to test
 
         public BaseDevice()
         {
@@ -31,18 +31,21 @@ namespace HomeControl.Models.BaseClasses
         {
             this.Type = Type;
             SetPowerConsumption(this.Type, out powerConsumption);
+            ConsumptionChanged += PowerMeter.GetInstance().UpdatePowerConsumption;
         }
 
-        public void SwitchOn()
+        public void Switch()
         {
-            IsOn = true;
-            ConsumptionChanged?.Invoke(powerConsumption);
-        }
-
-        public void SwitchOff()
-        {
-            IsOn = false;
-            ConsumptionChanged?.Invoke(-powerConsumption);
+            IsOn = !IsOn;
+            if (IsOn)
+            {
+                ConsumptionChanged?.Invoke(powerConsumption);
+            }
+            else
+            {
+                ConsumptionChanged?.Invoke(-powerConsumption);
+            }
+            
         }
 
         private void SetPowerConsumption(string type, out int powerConsumption)

@@ -5,12 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using static HomeControlModel.Events.HomeControlEvents;
 
-namespace HomeControl.Models.Intefaces.Modules
+namespace HomeControlModel.Intefaces.Modules
 {
-    public interface IRegulator
+    interface ITimer
     {
-        void SetValue(int value);
-        event ReadState ReadValue;
+        int Countdoun { set; }
         event UpdateState UpdateValue;
     }
 }

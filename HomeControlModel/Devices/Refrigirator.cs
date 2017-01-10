@@ -23,18 +23,27 @@ namespace HomeControl.Models.Devices
 
         public Refrigirator() : base("Refrigirator")
         {
-            temperatureRegulator = new Regulator(this.Type);
+            temperatureRegulator = new TemperatureRegulator(this.Type);
             temperatureRegulator.UpdateValue += UpdateCurrentTemperature;
+            temperatureRegulator.ReadValue += ReadCurrentTemperature;
         }
 
         public void SetTemperature(int temperature)
         {
-            temperatureRegulator.SetValue(temperature);
+            if (IsOn)
+            {
+                temperatureRegulator.SetValue(temperature);
+            }   
         }
 
         private void UpdateCurrentTemperature(int temperature)
         {
             CurrentTemperature = temperature;
+        }
+
+        private int ReadCurrentTemperature()
+        {
+            return CurrentTemperature;
         }
     }
 }

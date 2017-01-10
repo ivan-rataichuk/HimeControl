@@ -22,53 +22,48 @@ namespace HomeControl.Controllers
         {
             BaseDevice device = homeModel.Devices.GetById(id);
             homeModel.Devices.RemoveDevice(device);
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         public ActionResult AddDevice(string type = "")
         {
             homeModel.Devices.AddDevice(type);
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult SaveChanges()
-        {
-            homeModel.SaveInstance();
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult SelectChannel(int id, string channel = "" )
         {
-            ISelectable device = (ISelectable)homeModel.Devices.GetById(id);
+            ISelectable device = homeModel.Devices.GetById(id) as ISelectable;
             device.Channel = channel;
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult SetVolume(int id, int volume = 0)
         {
-            ISoundable device = (ISoundable)homeModel.Devices.GetById(id);
+            ISoundable device = homeModel.Devices.GetById(id) as ISoundable;
             device.SetVolume(volume);
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult SetTemperature(int id, int temperature = 0)
         {
-            IThermalControllable device = (IThermalControllable)homeModel.Devices.GetById(id);
+            IThermalControllable device = homeModel.Devices.GetById(id) as IThermalControllable;
             device.SetTemperature(temperature);
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult SwitchDevice(int id, bool isSwitched = false)
+        
+        public ActionResult SwitchDevice(int id)
         {
             BaseDevice device = homeModel.Devices.GetById(id);
-            if (isSwitched)
-            {
-                device.SwitchOn();
-            }
-            else
-            {
-                device.SwitchOff();
-            }
+            device.Switch();
+            homeModel.SaveChanges();
             return RedirectToAction("Index");
         }
     }

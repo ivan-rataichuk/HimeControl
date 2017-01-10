@@ -13,6 +13,6 @@ namespace HomeControlModel.Settings
         public static readonly string homeControlJSON = @"C:\HomeControlTest\home-control.json";
         //public static readonly string homeControlModelAssembly = @"C:\HomeControlTest\HomeControlModel.dll";
         //public static readonly string homeControlModelAssembly = @"C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\Test\bin\Debug\HomeControlModel.dll";
-        public static readonly string homeControlModelAssembly = @"C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\HomeControl\bin\HomeControlModel.dll";
+        public static readonly string homeControlModelAssembly = @"C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControl\bin\HomeControlModel.dll";
     }
 }

@@ -5,3 +5,10 @@ C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\HomeControlModel
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\HomeControlModel\obj\Debug\HomeControl.Model.csprojResolveAssemblyReference.cache
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\HomeControlModel\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Ivan\Documents\Visual Studio 2015\Projects\HomeControl\HomeControlModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\bin\Debug\HomeControlModel.dll
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\bin\Debug\HomeControlModel.pdb
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\obj\Debug\HomeControl.Model.csprojResolveAssemblyReference.cache
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\obj\Debug\HomeControlModel.dll
+C:\Users\Ivan\Documents\GitHub\HimeControl\HomeControlModel\obj\Debug\HomeControlModel.pdb

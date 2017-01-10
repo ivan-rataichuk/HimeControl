@@ -11,5 +11,6 @@ namespace HomeControlModel.Events
         public delegate void UpdateState(int value);
         public delegate void UpdateSignal(string signal);
         public delegate void UpdatePowerConsumption(int consumption);
+        public delegate int ReadState();
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml;
 using static HomeControlModel.Events.HomeControlEvents;
+using HomeControlModel.Events;
 
 namespace HomeControl.Models.Modules
 {
@@ -13,12 +14,13 @@ namespace HomeControl.Models.Modules
     public class Regulator : IRegulator
     {
         [DataMember]
-        private readonly int maxValue;
+        protected readonly int maxValue;
 
         [DataMember]
-        private readonly int minValue;
+        protected readonly int minValue;
 
         public event UpdateState UpdateValue;
+        public event HomeControlEvents.ReadState ReadValue;
 
         public Regulator()
         {
@@ -30,20 +32,33 @@ namespace HomeControl.Models.Modules
             ReadSettings(type, out maxValue, out minValue);
         }
 
-        public void SetValue(int value)
+        public virtual void SetValue(int value)
+        {
+            InvokeUpdateValue(CheckValue(value)); 
+        }
+
+
+        protected void InvokeUpdateValue(int value)
+        {
+            UpdateValue?.Invoke(value);
+        }
+
+        protected int InvokeReadValue()
+        {
+            return ReadValue.Invoke();
+        }
+
+        protected int CheckValue(int value)
         {
             if (value > maxValue)
             {
-                UpdateValue?.Invoke(maxValue);
+                return maxValue;
             }
             else if (value < minValue)
             {
-                UpdateValue?.Invoke(minValue);
+                return minValue;
             }
-            else
-            {
-                UpdateValue?.Invoke(value);
-            }   
+            return value;
         }
 
         private void ReadSettings(string type, out int maxValue, out int minValue)
@@ -77,5 +92,7 @@ namespace HomeControl.Models.Modules
                 }
             }
         }
+
+        
     }
 }

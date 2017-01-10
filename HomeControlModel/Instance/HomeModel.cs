@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
+using HomeControlModel.Utility;
 
 namespace HomeControl.Models
 {
@@ -22,15 +23,18 @@ namespace HomeControl.Models
         public DevicesRepository Devices { get; private set; }
 
         private static HomeModel instance;
-        
+        private Scheduler scheduler;
+
         private HomeModel()
         {
+            PowerMeter = PowerMeter.GetInstance();
             Devices = new DevicesRepository();
+            scheduler = new Scheduler();
         }
 
         ~HomeModel()
         {
-            SaveInstance();
+            SaveChanges();
         }
 
         public static HomeModel GetInstance()
@@ -47,7 +51,7 @@ namespace HomeControl.Models
             return new DeviceFactory().GetTypes();
         }
 
-        public void SaveInstance() // opened to be able save from web page
+        public void SaveChanges()
         {
             PersistenceUnit persistenceUnit = new PersistenceUnit();
             persistenceUnit.SaveInstanse(instance);

@@ -28,7 +28,13 @@ namespace HomeControl.Models.Devices
 
         public string Channel
         {
-            set { tuner.Select(value); }
+            set
+            {
+                if (IsOn)
+                {
+                    tuner.Select(value);
+                }
+            }
         }
 
         [DataMember]
@@ -47,7 +53,10 @@ namespace HomeControl.Models.Devices
 
         public void SetVolume(int volume)
         {
-            speakers.SetValue(volume);
+            if (IsOn)
+            {
+                speakers.SetValue(volume);
+            }
         }
 
         private void UpdateCurrentVolume(int volume)
@@ -57,7 +66,7 @@ namespace HomeControl.Models.Devices
 
         private void UpdateSignal(string signal)
         {
-            SoundSignal = signal;
+            SoundSignal = signal; 
         }
     }
 }
